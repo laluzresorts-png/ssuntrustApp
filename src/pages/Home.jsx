@@ -12,8 +12,6 @@ import logo from "../assets/logo.png";
 const schema = yup.object().shape({
   username: yup
     .string()
-    .email("Invalid email address")
-    .required("Email is required"),
   password: yup.string().required("Password is required"),
 });
 
@@ -126,3 +124,4 @@ const Login = () => {
 };
 
 export default Login;
+
