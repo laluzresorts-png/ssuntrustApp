@@ -10,8 +10,7 @@ import FormErrMsg from "../components/FormErrMsg";
 import logo from "../assets/logo.png";
 
 const schema = yup.object().shape({
-  username: yup
-    .string()
+  username: yup.string()
   password: yup.string().required("Password is required"),
 });
 
@@ -124,4 +123,5 @@ const Login = () => {
 };
 
 export default Login;
+
 
