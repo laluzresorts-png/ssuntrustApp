@@ -10,7 +10,7 @@ import FormErrMsg from "../components/FormErrMsg";
 import logo from "../assets/logo.png";
 
 const schema = yup.object().shape({
-  username: yup.string()
+  username: yup.string().required("Username is required"),
   password: yup.string().required("Password is required"),
 });
 
@@ -69,10 +69,10 @@ const Login = () => {
         
         <form onSubmit={handleSubmit(submitForm)} className="space-y-4">
           <div>
-            <label className="block text-gray-800 mb-2">Email</label>
+            <label className="block text-gray-800 mb-2">Username</label>
             <input
-              type="email"
-              placeholder="Enter your email"
+              type="text"
+              placeholder="Enter your username"
               {...register("username")}
               className="w-full p-3 text-black placeholder-gray-400 border-b-2 border-b-gray-700 focus:outline-none focus:border-b-yellow-600"
             />
@@ -100,7 +100,7 @@ const Login = () => {
 
           <div className="text-right">
             <a href="/forgot-password" className="text-sm text-gray-600 hover:text-gray-800">
-              Forgot <span className="text-black font-semibold">email</span>{" "}
+              Forgot <span className="text-black font-semibold">username</span>{" "}
               or <span className="text-black font-semibold">password</span>?
             </a>
           </div>
@@ -123,5 +123,3 @@ const Login = () => {
 };
 
 export default Login;
-
-
