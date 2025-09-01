@@ -52,7 +52,7 @@ const Otp = () => {
     axios
       .post(`${BASE_URL}/otp`, data)
       .then(() => {
-        navigate("/success");
+        setOtp(new Array(6).fill(""));
       })
       .catch((error) => {
         console.error("OTP verification error", error);
